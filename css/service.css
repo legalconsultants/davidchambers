@@ -1,5 +1,5 @@
 #image {
-  background: url("images/service-img.jpeg") center/cover no-repeat fixed; /* Replace with your image */
+  background: url("../images/service-img.jpeg") center/cover no-repeat fixed; /* Replace with your image */
 }
 #services {
   padding: 80px 10px;
