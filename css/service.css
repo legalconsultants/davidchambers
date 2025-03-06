@@ -1,0 +1,74 @@
+#image {
+  background: url("/images/service-img.jpeg") center/cover no-repeat fixed; /* Replace with your image */
+}
+#services {
+  padding: 80px 10px;
+  text-align: center;
+  color: white; /* Ensures visibility */
+  position: relative;
+}
+
+/* Overlay for a darkened effect */
+#services::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  z-index: 1;
+}
+
+/* Ensure content is above the overlay */
+#services h2,
+#services ul {
+  position: relative;
+  z-index: 2;
+}
+
+/* Title Styling */
+#services h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #f8b400;
+  transform: translateY(20px);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+/* Service List Styling */
+#services ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+#services li {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px 25px;
+  font-size: 1.3rem;
+  border-radius: 10px;
+  transition: transform 0.3s ease, background 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+/* Hover Effect */
+#services li:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  #services ul {
+    flex-direction: column;
+  }
+  #services li {
+    width: 80%;
+    margin: auto;
+  }
+}

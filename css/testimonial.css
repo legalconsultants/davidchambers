@@ -1,0 +1,72 @@
+/* Testimonials Section */
+#testimonials {
+  background: url("testimonials-bg.jpg") center/cover no-repeat fixed;
+  padding: 80px 20px;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+/* Dark overlay for readability */
+#testimonials::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+/* Ensure content is above the overlay */
+#testimonials h2,
+.testimonial-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Section Title */
+#testimonials h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #f8b400;
+}
+
+/* Testimonial Container */
+.testimonial-container {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Individual Testimonials */
+.testimonial {
+  font-size: 1.4rem;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+/* Hover effect for better UI */
+.testimonial:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .testimonial-container {
+    width: 95%;
+  }
+}
