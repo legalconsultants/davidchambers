@@ -55,6 +55,7 @@ textarea {
 }
 
 button {
+  display: none;
   padding: 12px;
   background-color: #f4b400;
   color: white;
