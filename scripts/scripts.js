@@ -18,9 +18,10 @@ document.addEventListener("DOMContentLoaded", function () {
       width: 100vw;
       height: 100vh;
       background-image: url('./images/3d.jpg');
-      background-size: cover;
+      background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
+      background-color: #000;
       z-index: -10;
       pointer-events: none;
     `;
