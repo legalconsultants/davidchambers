@@ -12,6 +12,58 @@ body {
   overflow-x: hidden;
 }
 
+/* ===== Mobile Background Fix ===== */
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+    background-position: center top;
+  }
+
+  /* Alternative mobile background approach */
+  body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/3d.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -2;
+    pointer-events: none;
+  }
+}
+
+/* ===== Additional Mobile Optimizations ===== */
+@media (max-width: 480px) {
+  body {
+    background-image: none; /* Disable main background on very small screens */
+  }
+
+  body::after {
+    background-size: cover;
+    background-position: center center;
+  }
+}
+
+/* ===== iOS Safari Specific Fix ===== */
+@supports (-webkit-touch-callout: none) {
+  body {
+    background-attachment: scroll;
+  }
+
+  body::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-attachment: scroll;
+  }
+}
+
 body::before {
   content: "";
   position: fixed;
