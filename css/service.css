@@ -1,7 +1,7 @@
 /* --- Services Section Professional Styling --- */
 /* ===== Services Section Background Integration ===== */
 #image {
-  background-image: url("./images/service-img.jpeg");
+  background-image: url("../images/service-img.jpeg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

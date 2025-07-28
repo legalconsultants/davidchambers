@@ -7,7 +7,7 @@
 /* ===== Hero Section Background Optimization ===== */
 .wrapper {
   height: 100vh;
-  background-image: url("./images/hero-background.webp");
+  background-image: url("../images/hero-background.webp");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
