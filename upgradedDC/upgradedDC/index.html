@@ -32,19 +32,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="./scripts/scripts.js"></script>
     <script src="./scripts/ads.js"></script>
-
-    <!-- EmailJS -->
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
-    ></script>
-    <script type="text/javascript">
-      (function () {
-        emailjs.init({
-          publicKey: "O9PaWuor-bfdg9keB",
-        });
-      })();
-    </script>
   </head>
   <body>
     <div class="wrapper">
@@ -94,8 +81,7 @@
             <h2 class="about-title">About David Chambers</h2>
             <center>
               <p class="about-text">
-                <!-- FIXED: Typo corrected below -->
-                He works as a General Practice Lawyer, Here are my Area of
+                He work has a General Practice Lawyer , Here are my Area of
                 Practice: Litigation, Arbitration, Debt Collection, Banking &
                 Finance, International Commercial Law, S&M Business Advisory,
                 Construction, Employment Labour, Financial Crime, Healthcare
@@ -164,34 +150,11 @@
 
     <section id="appointment" data-aos="fade-up">
       <h2>Book an Appointment</h2>
-      <form id="appointment-form" onsubmit="sendMail(); return false;">
-        <input
-          type="text"
-          id="name"
-          name="name"
-          placeholder="Your Name"
-          required
-        />
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="Your Email"
-          required
-        />
-        <input
-          type="text"
-          id="phone"
-          name="phone"
-          placeholder="Your Phone"
-          required
-        />
-        <textarea
-          id="message"
-          name="message"
-          placeholder="Your Message"
-          required
-        ></textarea>
+      <form id="appointment-form">
+        <input type="text" name="name" placeholder="Your Name" required readonly />
+        <input type="email" name="email" placeholder="Your Email" required readonly />
+        <input type="text" name="phone" placeholder="Your Phone" required readonly />
+        <textarea name="message" placeholder="Your Message" required readonly></textarea>
         <button type="submit">Submit</button>
       </form>
     </section>
@@ -199,27 +162,18 @@
     <section id="contact" data-aos="fade-up">
       <h2>Contact Us</h2>
       <p>
-        <!-- FIXED: Email link and visible text now match -->
         Email:
-        <a href="mailto:barristerdchambers32@gmail.com"
+        <a href="mailto:barristerdchambers32@gmail.com "
           >info@davidchamberslaw.com</a
         >
       </p>
     </section>
 
-    <button
-      id="scrollToTop"
-      title="Go to top"
-      onclick="scrollToTop(); return false;"
-    >
-      &#8679;
-    </button>
-
     <footer data-aos="fade-up">
       <p>
         <small
           >&copy; David CHAMBERS LEGAL PRACTITIONER SOLICITORS AND ADVOCATE
-          (LEGAL CONSULTANT OF THE SUPREME COURT)</small
+          (LEGAL CONSULTANT OF THE SUPREME COURT)</small
         >
       </p>
     </footer>
