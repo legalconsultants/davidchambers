@@ -1,5 +1,67 @@
 document.addEventListener("DOMContentLoaded", function () {
   /** =============================
+   * 📌 Mobile Background Image Fix
+   * ============================== */
+
+  // Check if we're on mobile
+  const isMobile = window.innerWidth <= 768;
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+
+  if (isMobile || isIOS) {
+    // Method 1: Try CSS background first
+    const bgDiv = document.createElement("div");
+    bgDiv.id = "mobile-background";
+    bgDiv.style.cssText = `
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-image: url('./images/3d.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: -10;
+      pointer-events: none;
+    `;
+
+    // Insert at the beginning of body
+    document.body.insertBefore(bgDiv, document.body.firstChild);
+
+    // Method 2: HTML img fallback
+    const htmlBackground = document.getElementById("html-background");
+    if (htmlBackground) {
+      const img = htmlBackground.querySelector("img");
+      if (img) {
+        img.style.display = "block";
+        htmlBackground.style.display = "block";
+      }
+    }
+
+    // Remove any conflicting background from body
+    document.body.style.backgroundImage = "none";
+
+    // Test if background is visible after 1 second
+    setTimeout(() => {
+      const computedStyle = window.getComputedStyle(bgDiv);
+      if (
+        computedStyle.backgroundImage === "none" ||
+        computedStyle.backgroundImage === ""
+      ) {
+        // CSS background failed, use HTML img
+        if (htmlBackground) {
+          const img = htmlBackground.querySelector("img");
+          if (img) {
+            img.style.display = "block";
+            htmlBackground.style.display = "block";
+            bgDiv.style.display = "none";
+          }
+        }
+      }
+    }, 1000);
+  }
+
+  /** =============================
    * 📌 Mobile Menu Toggle
    * ============================== */
   const menuToggle = document.querySelector(".menu-toggle");
