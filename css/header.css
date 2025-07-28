@@ -6,11 +6,11 @@
 
 /* ===== Hero Section Background Optimization ===== */
 .wrapper {
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
   background-image: url("../images/hero-background.webp");
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
